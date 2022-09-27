@@ -68,3 +68,15 @@ Backend API de un sistema de un cine
 - Los clientes pueden dejar un comentario en las películas
 - Para ver los comentarios de las películas, el cliente debe ver los datos de una película en específico
 - Los clientes tienen un descuento del 20% el día de su cumpleaños
+
+- Modelos propuestos:
+
+  - Users
+  - Películas
+  - Funciones
+  - Salas
+  - Ventas
+  - Comentarios
+
+- Branch name
+  `[feat o fix]/[INICIALES EN MAYUS]-[NÚMERO DE TAREA]/[nombre-de-la-tarea]`
