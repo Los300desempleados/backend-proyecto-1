@@ -1,3 +1,4 @@
 import Movie from './Movie.js'
+import User from './User.js'
 
-export { Movie }
+export { User, Movie }
