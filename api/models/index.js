@@ -1,3 +1,7 @@
-import Comments from "./Comments.js";
+import Movie from './Movie.js'
+import User from './User.js'
+import Projection from './Projection.js'
+import Comments from './Comments.js'
 
-export { Comments };
+
+export { User, Movie, Projection, Comments }
