@@ -1,15 +1,15 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const TheaterSchema = new mongoose.Schema({
-  address:{
-    type: String,
+  address: {
+    type: String
   },
-  seating:{
+  seating: {
     type: Number,
-    required: true,
+    required: true
   },
-  name:{
-    type: String,
+  name: {
+    type: String
   }
 })
 
