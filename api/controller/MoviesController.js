@@ -9,7 +9,7 @@ const create = async (req, res) => {
         })
 
     } catch (error) {
-        rest.status(500).json({
+        res.status(500).json({
             msg: 'Error al crear película',
             error
         })
