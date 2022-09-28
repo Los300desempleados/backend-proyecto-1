@@ -1,7 +1,6 @@
 import { User } from "../models/index.js";
 import bcrypt from 'bcrypt';
-import jwt from 'jwt-simple'
-import config from '../config/index.js'
+
 
 const register = async (req, res) => {
   try {
