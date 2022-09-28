@@ -1,11 +1,11 @@
-import express from 'express';
+import express from 'express'
 
-const api = express();
+const api = express()
 
 api.get('/status', (_, res) => {
   return res.json({
-    msg: 'API Funcionando',
-  });
-});
+    msg: 'API Funcionando'
+  })
+})
 
-export default api;
+export default api
