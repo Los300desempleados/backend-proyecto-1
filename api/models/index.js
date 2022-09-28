@@ -1,7 +1,5 @@
-import User from './User.js';
+import Movie from './Movie.js'
+import User from './User.js'
+import Projection from './Projection.js'
 
-
-export {
-
-  User
-};
+export { User, Movie, Projection }
