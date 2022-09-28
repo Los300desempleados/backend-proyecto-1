@@ -79,4 +79,4 @@ Backend API de un sistema de un cine
   - Comentarios
 
 - Branch name
-  `[feat o fix]/[INICIALES EN MAYUS]-[NÚMERO DE TAREA]/[nombre-de-la-tarea]`
+  `[feat o fix]/[INICIALES EN MAYUS]-[NÚMERO DE TAREA]/[nombre-de-la-tarea]` 🎅
