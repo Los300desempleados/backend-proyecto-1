@@ -80,3 +80,7 @@ Backend API de un sistema de un cine
 
 - Branch name
   `[feat o fix]/[INICIALES EN MAYUS]-[NÚMERO DE TAREA]/[nombre-de-la-tarea]`
+
+git checkout -b feat/RDC-#8/connection_to_the_DB crear rama
+git branch -m feat/RDC-#8/connection_to_the_DB feat/RDC-8/connection_to_the_DB // renombrar rama
+git push origin feat/RDC-8/connection_to_the_DB // subir mi rama al repo remoto
