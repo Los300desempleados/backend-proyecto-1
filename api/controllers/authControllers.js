@@ -17,7 +17,7 @@ const register = async (req, res) => {
     user.password = undefined;
 
     return res.json({
-      msg: 'Usuario registrao exitosamente',
+      msg: 'Usuario registrado exitosamente',
       user,
     });
   } catch (error) {
@@ -28,8 +28,4 @@ const register = async (req, res) => {
   }
 };
 
-const login = async (req, res) => {
-
-}
-
-export { register, login };
+export { register };

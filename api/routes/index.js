@@ -1,4 +1,4 @@
 
-import authRoutes from './authRouthes'
+import authRoutes from './authRouthes.js'
 
 export { authRoutes };
