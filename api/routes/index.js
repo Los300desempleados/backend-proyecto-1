@@ -1,3 +1,3 @@
-import authRoutes from './authRouthes.js'
+import authRoutes from './authRoutes.js'
 
 export { authRoutes }
