@@ -9,7 +9,6 @@ const ticketsSchema = new mongoose.Schema({
     type: Number,
     require: true
   },
-
   totalPrice: {
     type: Number,
     require: true
