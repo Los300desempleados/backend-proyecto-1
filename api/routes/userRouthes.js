@@ -1,11 +1,9 @@
 
-import express from 'express';
-import { userController } from '../controllers/index.js';
+import express from 'express'
+import { userController } from '../controllers/index.js'
 
+const router = express.Router()
 
-const router = express.Router();
+router.put('/update/:id', userController.updatePassword)
 
-router.put('/update/:id', userController.updatePasswordOrEmailById);
-
-
-export default router;
+export default router

@@ -1,18 +1,23 @@
 import { User } from "../models/index.js";
 import bcrypt from 'bcrypt';
 
-const updatePasswordOrEmailById = async (req, res) => {
+const updatePassword = async (req, res) => {
 
   try {
     const { id } = req.params;
 
     const encrypted = await bcrypt.hash(req.body.password, 10);
 
-    req.body.password = encrypted;
+    req.body.password = encrypted
+
+
 
     const newPasswordOrEmail = await User.findByIdAndUpdate(id, req.body, {
       new: true,
     });
+
+    newPasswordOrEmail.password = undefined;
+
     return res.json({
       msg: `User ${User.name} actualizado`,
       newPasswordOrEmail,
@@ -24,4 +29,4 @@ const updatePasswordOrEmailById = async (req, res) => {
   }
 };
 
-export { updatePasswordOrEmailById };
+export { updatePassword };
