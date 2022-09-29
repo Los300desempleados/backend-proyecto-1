@@ -4,7 +4,7 @@ import { authRoutes } from './routes/index.js';
 
 const api = express()
 
-api.use(express.json());
+api.use(express.json())
 
 api.get('/status', (_, res) => {
   return res.json({
@@ -12,6 +12,6 @@ api.get('/status', (_, res) => {
   })
 })
 
-api.use(authRoutes);
+api.use(authRoutes)
 
-export default api;
+export default api
