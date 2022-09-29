@@ -1,5 +1,5 @@
 import express from 'express'
-import { authRoutes, theaterRoutes } from './routes/index.js'
+import { authRoutes, theaterRoutes, ProjectionRoutes } from './routes/index.js'
 
 const api = express()
 
@@ -13,5 +13,5 @@ api.get('/status', (_, res) => {
 
 api.use(authRoutes)
 api.use(theaterRoutes)
-
+api.use(ProjectionRoutes)
 export default api
