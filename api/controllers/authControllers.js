@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt'
 import jwt from 'jwt-simple'
-import { User } from '../models/index,js'
+import { User } from '../models/index.js'
 import config from '../config/index.js'
 
 const login = async (req, res) => {
