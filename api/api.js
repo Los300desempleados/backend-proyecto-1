@@ -1,5 +1,5 @@
 import express from 'express'
-import { authRoutes } from './routes/index.js'
+import { authRoutes, theaterRoutes } from './routes/index.js'
 
 const api = express()
 
@@ -12,5 +12,6 @@ api.get('/status', (_, res) => {
 })
 
 api.use(authRoutes)
+api.use(theaterRoutes)
 
 export default api
