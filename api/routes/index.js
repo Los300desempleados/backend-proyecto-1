@@ -1,4 +1,5 @@
 
 import authRoutes from './authRouthes.js'
+import userRoutes from './userRouthes.js'
 
-export { authRoutes };
+export { authRoutes, userRoutes };
