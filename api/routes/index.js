@@ -1,3 +1,5 @@
 import authRoutes from './authRoutes.js'
 import theaterRoutes from './theaterRoutes.js'
-export { authRoutes, theaterRoutes }
+import commentRoutes from './commentRoutes.js'
+
+export { authRoutes, theaterRoutes, commentRoutes }
