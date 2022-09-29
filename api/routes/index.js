@@ -1,3 +1,4 @@
 import projectionRoutes from './projectionRoutes.js'
+import authRoutes from './authRouthes.js'
 
-export { projectionRoutes }
+export { authRoutes, projectionRoutes }
