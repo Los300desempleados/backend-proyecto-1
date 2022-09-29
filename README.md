@@ -15,14 +15,14 @@ Backend API de un sistema de un cine
 - Para poder registrar a un usuario en el sistema, se deberán ingresar los siguientes datos:
 
   - No de identificación DNI
-  - Nombres
-  - APellidos
-  - Fecha de nacimiento
-  - Rol (admin, empleado, cliente)
-  - Teléfono
-  - Correo
-  - Contraseña
-  - Alias
+  - Nombres*
+  - APellidos*
+  - Fecha de nacimiento*
+  - Rol (admin, empleado, cliente)*
+  - Teléfono*
+  - Correo*
+  - Contraseña*
+  - Alias*
 
 - Solo el administrador puede registrar a más empleados
 - Los clientes se pueden registrar sin cuenta previa

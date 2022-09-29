@@ -1,7 +1,7 @@
 import http from 'http'
 import api from './api/api.js'
 import config from './api/config/index.js'
-// import init from './config/database.js'
+import init from './api/config/database.js'
 
 const server = http.createServer(api)
 
@@ -17,4 +17,4 @@ server.on('error', (e) => {
 })
 
 server.listen(config.server.port)
-// init()
+init()
