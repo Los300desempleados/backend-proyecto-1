@@ -1,5 +1,5 @@
-import bcrypt from 'bcrypt'
 import jwt from 'jwt-simple'
+import bcrypt from 'bcrypt'
 import { User } from '../models/index.js'
 import config from '../config/index.js'
 
