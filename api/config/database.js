@@ -1,22 +1,22 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 import config from './index.js'
 
-const db = mongoose.connection;
+const db = mongoose.connection
 
-db.on('conecting', () => {
-    console.info('Starting connection to database 🟡')
-});
+db.on('connecting', () => {
+  console.info('Starting connection to database 🟡')
+})
 
-db.on('conected', () => {
-    console.log('Connected to the database 🟢')
-});
+db.on('connected', () => {
+  console.log('Connected to the database 🟢')
+})
 
 db.on('disconnect', () => {
-    console.error('Offline database 🔴')
-});
+  console.error('Offline database 🔴')
+})
 
 const init = () => {
-    mongoose.connect(config.database.uri)
-};
+  mongoose.connect(config.database.uri)
+}
 
-export default init;
+export default init
