@@ -1,9 +1,14 @@
 import express from 'express'
-import { authRoutes, userRoutes, theaterRoutes, commentRoutes } from './routes/index.js'
-// import { authValidator } from './middlewares/index.js'
+import authValidator from './middlewares/authValidator.js'
+import {
+  authRoutes,
+  userRoutes,
+  saleRoutes,
+  theaterRoutes,
+  commentRoutes
+} from './routes/index.js'
 
 const api = express()
-
 api.use(express.json())
 
 api.get('/status', (_, res) => {
@@ -12,12 +17,12 @@ api.get('/status', (_, res) => {
   })
 })
 
-api.use(userRoutes)
 api.use(authRoutes)
-
+api.use(userRoutes)
 api.use(theaterRoutes)
+api.use(saleRoutes)
 
-// api.use(authValidator)
+api.use(authValidator)
 
 api.use(commentRoutes)
 
