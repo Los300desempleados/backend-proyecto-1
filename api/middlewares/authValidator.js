@@ -11,7 +11,8 @@ const authValidator = (req, res, next) => {
   }
 
   try {
-    jwt.decode(token, config.token.secret)
+    const { userId } = jwt.decode(token, config.token.secret)
+    req.userId = userId
     next()
   } catch (error) {
     res.status(401).json({
