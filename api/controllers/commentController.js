@@ -1,4 +1,4 @@
-import { Comments } from '../models/index.js'
+import { Comment } from '../models/index.js'
 
 const createComment = async (req, res) => {
   try {
@@ -9,7 +9,7 @@ const createComment = async (req, res) => {
         msg: 'Unathorized credentials'
       })
     }
-    const newComment = new Comments({
+    const newComment = new Comment({
       movie: movieId,
       comment,
       date,
