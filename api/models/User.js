@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['admin', 'employee', 'customer'],
     defaut: 'employee',
-    require: true
+    required: true
   },
   phone: {
     type: String
