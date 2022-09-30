@@ -17,7 +17,8 @@ const projectionSchema = new mongoose.Schema ({
         required: true,
     },
     movie: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'movie',
         required: true,
     },
     price: {
