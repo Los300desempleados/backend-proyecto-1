@@ -1,6 +1,6 @@
 import { Movie } from 'models/index.js';
 
-const create = async (req, res) => {
+const createMovie = async (req, res) => {
     try {
         const movie = await Movie.create(req.body) 
         return res.json({
