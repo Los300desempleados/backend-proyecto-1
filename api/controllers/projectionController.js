@@ -1,4 +1,5 @@
-import { Projection } from '../models/index'
+import { Projection } from '../models/index.js'
+
 const deleteById = async (req, res) => {
   const { id } = req.params
   try {

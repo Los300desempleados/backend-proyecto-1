@@ -1,4 +1,4 @@
 import authRoutes from './authRoutes.js'
-import * as projectionRoutes from './projectionRoutesRoutes.js'
+import projectionRoutes from './projectionRoutes.js'
 
 export { authRoutes, projectionRoutes }
