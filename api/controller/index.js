@@ -1,3 +1,3 @@
-import { createMovie } from 'controller/MovieController';
+import { createMovie } from 'controller/movieController.js';
 
 export { createMovie }
