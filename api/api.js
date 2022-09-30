@@ -5,13 +5,12 @@ import {
   userRoutes,
   saleRoutes,
   theaterRoutes,
+  commentRoutes,
   projectionRoutes
 } from './routes/index.js'
 
 const api = express()
 api.use(express.json())
-api.use(authRoutes)
-api.use(authValidator)
 
 api.get('/status', (_, res) => {
   return res.json({
@@ -19,11 +18,15 @@ api.get('/status', (_, res) => {
   })
 })
 
+api.use(authRoutes)
 api.use(userRoutes)
 api.use(theaterRoutes)
-api.use(projectionRoutes)
+api.use(authValidator)
+
 api.use(saleRoutes)
 
+api.use(commentRoutes)
 api.use(projectionRoutes)
+api.use(saleRoutes)
 
 export default api

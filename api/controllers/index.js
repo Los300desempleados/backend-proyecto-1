@@ -1,4 +1,5 @@
 import * as authController from './authController.js'
+import * as commentController from './commentController.js'
 import * as projectionController from './projectionController.js'
 import * as saleController from './saleController.js'
 import * as userController from './userController.js'
@@ -9,5 +10,6 @@ export {
   theaterController,
   userController,
   saleController,
-  projectionController
+  projectionController,
+  commentController
 }

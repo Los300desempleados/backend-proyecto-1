@@ -1,7 +1,7 @@
-import { User } from '../models/index.js';
-import jwt from 'jwt-simple';
-import bcrypt from 'bcrypt';
-import config from '../config/index.js';
+import { User } from '../models/index.js'
+import jwt from 'jwt-simple'
+import bcrypt from 'bcrypt'
+import config from '../config/index.js'
 
 const register = async (req, res) => {
   try {
@@ -20,14 +20,14 @@ const register = async (req, res) => {
     return res.json({
       msg: 'Usuario registrado exitosamente',
       user
-    });
+    })
   } catch (error) {
     res.status(500).json({
       msg: 'Error al registrar usuario',
       error
-    });
+    })
   }
-};
+}
 
 const login = async (req, res) => {
   try {
@@ -69,7 +69,6 @@ const login = async (req, res) => {
   }
 }
 
-
 const softDelete = async (req, res) => {
   const { id } = req.params
   try {
@@ -77,7 +76,7 @@ const softDelete = async (req, res) => {
       isDeleted: true
     })
     return res.json({
-      msg: `The user ${user.name} has been temporarily deleted`,
+      msg: `The user ${user.name} has been temporarily deleted`
     })
   } catch (error) {
     res.status(500).json({
@@ -86,6 +85,5 @@ const softDelete = async (req, res) => {
     })
   }
 }
-
 
 export { register, login, softDelete }
