@@ -1,7 +1,8 @@
 import { Router } from 'express'
-import { ProjectionController } from '../controllers/index.js'
+import { projectionController } from '../controllers/index.js'
 
 const router = Router()
 
-router.post('/projection', ProjectionController.create)
+router.post('/projection', projectionController.create)
+router.delete('/projection/:id', projectionController.deleteById)
 export default router
