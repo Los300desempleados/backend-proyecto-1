@@ -1,4 +1,4 @@
-import { Movie } from 'models/index.js';
+import { Movie } from '../models/index.js';
 
 const createMovie = async (req, res) => {
     try {
