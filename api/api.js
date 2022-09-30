@@ -11,8 +11,7 @@ api.get('/status', (_, res) => {
   })
 })
 
-
-api.use(userRoutes);
+api.use(userRoutes)
 api.use(authRoutes)
 api.use(theaterRoutes)
 
