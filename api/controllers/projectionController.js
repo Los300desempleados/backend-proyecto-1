@@ -1,5 +1,20 @@
 import { Projection } from '../models/index.js'
 
+const create = async (req, res) => {
+  try {
+    const projection = await Projection.create(req.body)
+    return res.json({
+      msg: 'Pelicula creada satisfactoriamente',
+      projection
+    })
+  } catch (error) {
+    res.status(500).json({
+      msg: 'Error al intentar crear pelicula',
+      error
+    })
+  }
+}
+
 const getAll = async (req, res) => {
   try {
     const projections = await Projection.findOne({
@@ -18,4 +33,4 @@ const getAll = async (req, res) => {
   }
 }
 
-export { getAll }
+export { create, getAll }

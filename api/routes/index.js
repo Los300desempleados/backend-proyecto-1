@@ -1,3 +1,3 @@
 import authRoutes from './authRoutes.js'
-
-export { authRoutes }
+import theaterRoutes from './theaterRoutes.js'
+export { authRoutes, theaterRoutes }
