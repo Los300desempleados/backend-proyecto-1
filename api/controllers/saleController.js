@@ -1,9 +1,10 @@
-import { Sale } from '../models/index.js'
+import { Sale, User } from '../models/index.js'
 
 const createSale = async (req, res) => {
   try {
     const { date, discount, totalPrice, projection } = req.body
-    const { user } = req
+    const { userId } = req
+    const user = await User.findById(userId)
     const newSale = new Sale({
       date,
       discount,

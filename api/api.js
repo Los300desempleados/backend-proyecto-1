@@ -1,5 +1,10 @@
 import express from 'express'
-import { authRoutes, saleRoutes, theaterRoutes } from './routes/index.js'
+import {
+  authRoutes,
+  userRoutes,
+  saleRoutes,
+  theaterRoutes
+} from './routes/index.js'
 
 const api = express()
 
@@ -11,6 +16,7 @@ api.get('/status', (_, res) => {
   })
 })
 
+api.use(userRoutes)
 api.use(authRoutes)
 api.use(theaterRoutes)
 api.use(saleRoutes)

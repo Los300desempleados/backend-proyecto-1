@@ -3,7 +3,7 @@ import config from '../config/index.js'
 
 const authValidator = (req, res, next) => {
   const token = req.headers.authorization
-
+  console.log('a', token)
   if (!token) {
     return res.status(401).json({
       msg: 'Authorization no encontrada'
