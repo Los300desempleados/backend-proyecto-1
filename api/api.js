@@ -5,7 +5,7 @@ import {
   userRoutes,
   saleRoutes,
   theaterRoutes,
-  ProjectionRoutes
+  projectionRoutes
 } from './routes/index.js'
 
 const api = express()
@@ -21,7 +21,9 @@ api.get('/status', (_, res) => {
 
 api.use(userRoutes)
 api.use(theaterRoutes)
-api.use(ProjectionRoutes)
+api.use(projectionRoutes)
 api.use(saleRoutes)
+
+api.use(projectionRoutes)
 
 export default api
