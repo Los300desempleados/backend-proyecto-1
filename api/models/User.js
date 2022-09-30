@@ -6,8 +6,7 @@ const userSchema = new mongoose.Schema({
   },
   name: {
     type: String,
-    required: true,
-    isDeleted: Boolean
+    required: true
   },
   lastname: {
     type: String
@@ -36,6 +35,10 @@ const userSchema = new mongoose.Schema({
   alias: {
     type: String,
     required: true
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false
   }
 })
 

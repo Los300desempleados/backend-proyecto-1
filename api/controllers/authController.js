@@ -69,12 +69,20 @@ const register = async (req, res) => {
   }
 }
 
-
-const softDelete = async () => {
+const softDelete = async (req, res) => {
+  const { id } = req.params
   try {
-    
+    const user = await User.findByIdAndUpdate(id, {
+      isDeleted: true
+    })
+    return res.json({
+      msg: `The user ${user.name} has been temporarily deleted`,
+    })
   } catch (error) {
-    
+    res.status(500).json({
+      msg: 'Error temporarily deleting user',
+      error
+    })
   }
 }
 
