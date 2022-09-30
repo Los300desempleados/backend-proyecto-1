@@ -1,4 +1,6 @@
+import userRoutes from './userRoutes.js'
 import authRoutes from './authRoutes.js'
 import theaterRoutes from './theaterRoutes.js'
 import ProjectionRoutes from './projectionRoutes.js'
-export { authRoutes, theaterRoutes, ProjectionRoutes }
+import saleRoutes from './saleRoutes.js'
+export { authRoutes, theaterRoutes, saleRoutes, userRoutes, ProjectionRoutes }
