@@ -1,5 +1,5 @@
 import express from 'express'
-import { authRoutes, theaterRoutes, commentRoutes } from './routes/index.js'
+import { authRoutes, userRoutes, theaterRoutes, commentRoutes } from './routes/index.js'
 // import { authValidator } from './middlewares/index.js'
 
 const api = express()
@@ -12,6 +12,7 @@ api.get('/status', (_, res) => {
   })
 })
 
+api.use(userRoutes)
 api.use(authRoutes)
 
 api.use(theaterRoutes)
