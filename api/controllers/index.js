@@ -1,4 +1,4 @@
 import * as theaterController from './theaterController.js'
 import * as authController from './authController.js'
-
-export { authController, theaterController }
+import * as saleController from './saleController.js'
+export { authController, theaterController, saleController }
