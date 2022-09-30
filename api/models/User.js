@@ -1,29 +1,27 @@
-
-import mongoose from "mongoose";
+import mongoose from 'mongoose'
 
 const userSchema = new mongoose.Schema({
-
   dni: {
-    type: String,
+    type: String
   },
   name: {
     type: String,
-    required: true,
+    required: true
   },
   lastname: {
-    type: String,
+    type: String
   },
   birthDate: {
-    type: Date,
+    type: Date
   },
   role: {
     type: String,
     enum: ['admin', 'employee', 'customer'],
     defaut: 'employee',
-    require: true,
+    required: true
   },
   phone: {
-    type: String,
+    type: String
   },
   email: {
     type: String,
@@ -32,12 +30,16 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
+    required: true
   },
   alias: {
     type: String,
-    required: true,
+    required: true
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false
   }
-});
+})
 
 export default mongoose.model('User', userSchema)

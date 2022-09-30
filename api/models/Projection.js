@@ -1,30 +1,30 @@
 import mongoose from 'mongoose'
 
-const projectionSchema = new mongoose.Schema ({
+const projectionSchema = new mongoose.Schema({
     date: {
         type: Date,
-        required: true,
+        required: true
     },
-    language:{
+    language: {
         type: String,
-        required: true,
+        required: true
     },
     subtitles: {
-        type: String,
+        type: String
     },
     room: {
         type: Number,
-        required: true,
+        required: true
     },
     movie: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'movie',
-        required: true,
+        required: true
     },
     price: {
         type: Number,
-        required: true,
-    },  
+        required: true
+    }
 })
 
 export default mongoose.model('Projection', projectionSchema)

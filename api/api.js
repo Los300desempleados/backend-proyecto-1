@@ -1,11 +1,25 @@
-import express from 'express';
+import express from 'express'
+import authValidator from './middlewares/authValidator.js'
+import {
+  authRoutes,
+  userRoutes,
+  saleRoutes,
+  theaterRoutes
+} from './routes/index.js'
 
-const api = express();
+const api = express()
+api.use(express.json())
+api.use(authRoutes)
+api.use(authValidator)
 
 api.get('/status', (_, res) => {
   return res.json({
-    msg: 'API Funcionando',
-  });
-});
+    msg: 'API Funcionando'
+  })
+})
 
-export default api;
+api.use(userRoutes)
+api.use(theaterRoutes)
+api.use(saleRoutes)
+
+export default api
