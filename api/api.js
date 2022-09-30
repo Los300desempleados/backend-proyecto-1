@@ -5,7 +5,8 @@ import {
   userRoutes,
   saleRoutes,
   theaterRoutes,
-  commentRoutes
+  commentRoutes,
+  projectionRoutes
 } from './routes/index.js'
 
 const api = express()
@@ -25,5 +26,7 @@ api.use(authValidator)
 api.use(saleRoutes)
 
 api.use(commentRoutes)
+api.use(projectionRoutes)
+api.use(saleRoutes)
 
 export default api
