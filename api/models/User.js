@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['admin', 'employee', 'customer'],
     defaut: 'employee',
-    require: true
+    required: true
   },
   phone: {
     type: String
@@ -35,6 +35,10 @@ const userSchema = new mongoose.Schema({
   alias: {
     type: String,
     required: true
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false
   }
 })
 
