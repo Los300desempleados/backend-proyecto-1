@@ -20,9 +20,9 @@ api.get('/status', (_, res) => {
 api.use(authRoutes)
 api.use(userRoutes)
 api.use(theaterRoutes)
-api.use(saleRoutes)
-
 api.use(authValidator)
+
+api.use(saleRoutes)
 
 api.use(commentRoutes)
 

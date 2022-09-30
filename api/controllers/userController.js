@@ -1,32 +1,29 @@
-import { User } from "../models/index.js";
-import bcrypt from 'bcrypt';
+import { User } from '../models/index.js'
+import bcrypt from 'bcrypt'
 
 const updatePassword = async (req, res) => {
-
   try {
-    const { id } = req.params;
+    const { id } = req.params
 
-    const encrypted = await bcrypt.hash(req.body.password, 10);
+    const encrypted = await bcrypt.hash(req.body.password, 10)
 
     req.body.password = encrypted
 
-
-
     const newPasswordOrEmail = await User.findByIdAndUpdate(id, req.body, {
-      new: true,
-    });
+      new: true
+    })
 
-    newPasswordOrEmail.password = undefined;
+    newPasswordOrEmail.password = undefined
 
     return res.json({
       msg: `User ${User.name} actualizado`,
-      newPasswordOrEmail,
-    });
+      newPasswordOrEmail
+    })
   } catch (error) {
     res.status(500).json({
-      msg: 'Error al actualizar el password',
-    });
+      msg: 'Error al actualizar el password'
+    })
   }
-};
+}
 
-export { updatePassword };
+export { updatePassword }
