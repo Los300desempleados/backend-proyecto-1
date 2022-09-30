@@ -1,16 +1,16 @@
-import { Sale, User } from '../models/index.js'
+import { Sale } from '../models/index.js'
 
 const createSale = async (req, res) => {
   try {
-    const { date, discount, totalPrice, projection } = req.body
+    const { date, discount, totalPrice, projectionId } = req.body
     const { userId } = req
-    const user = await User.findById(userId)
+    if (!userId) return res.status(401).json({ msg: 'Unauthorized' })
     const newSale = new Sale({
       date,
       discount,
       totalPrice,
-      user,
-      projection
+      user: userId,
+      projection: projectionId
     })
     const saleSaved = await newSale.save()
     res.status(201).json({
