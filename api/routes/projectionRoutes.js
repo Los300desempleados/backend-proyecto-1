@@ -3,7 +3,6 @@ import { projectionController } from '../controllers/index.js'
 
 const router = express.Router()
 
-router.getAll('/findmovie', projectionController.findmovie)
-router.create('/create', projectionController.create)
+router.get('/findmovie', projectionController.findMovie)
 
 export default router
