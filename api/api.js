@@ -1,5 +1,6 @@
 import express from 'express'
-import { authRoutes, theaterRoutes } from './routes/index.js'
+import { authRoutes, theaterRoutes, commentRoutes } from './routes/index.js'
+// import { authValidator } from './middlewares/index.js'
 
 const api = express()
 
@@ -12,6 +13,11 @@ api.get('/status', (_, res) => {
 })
 
 api.use(authRoutes)
+
 api.use(theaterRoutes)
+
+// api.use(authValidator)
+
+api.use(commentRoutes)
 
 export default api

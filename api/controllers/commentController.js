@@ -1,8 +1,15 @@
-import { Comment } from '../models/index.js'
+import { Comments } from '../models/index.js'
 
 const create = async (req, res) => {
+  const userId = req.userId
+
+  if (!userId) {
+    return res.status(401).json({
+      msg: 'Invalid token'
+    })
+  }
   try {
-    const comment = await Comment.create(req.body)
+    const comment = await Comments.create(req.body)
     return res.json({
       msg: 'Comentario creado exitosamente',
       comment
