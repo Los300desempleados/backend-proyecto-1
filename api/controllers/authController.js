@@ -2,6 +2,7 @@ import { User } from '../models/index.js'
 import jwt from 'jwt-simple'
 import bcrypt from 'bcrypt'
 import config from '../config/index.js'
+import sendEmail from '../helpers/sendEmail.js'
 
 const register = async (req, res) => {
   try {
@@ -16,6 +17,14 @@ const register = async (req, res) => {
 
     // Borramos el password para no mandarla en la respuesta
     user.password = undefined
+
+    // send email to verify
+    await sendEmail({
+      email: user.email,
+      subject: 'Verify your email',
+      message: 'Please verify your email',
+      html: `<a href="http://localhost:3000/verify/${user.id}">Verify your email</a>`
+    })
 
     return res.json({
       msg: 'Usuario registrado exitosamente',

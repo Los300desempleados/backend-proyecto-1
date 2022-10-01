@@ -11,6 +11,12 @@ const config = {
   },
   tokens: {
     secret: process.env.TOKEN_SECRET
+  },
+  mail: {
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 }
 
