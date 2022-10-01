@@ -68,6 +68,9 @@ const login = async (req, res) => {
       })
     }
 
+    // login if user is activated
+    if (!user.isActivated) return res.status(401).json({ msg: 'Please, verify your email to get access to our platform' })
+
     const payload = {
       userId: user.id
     }
