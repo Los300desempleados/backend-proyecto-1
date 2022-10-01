@@ -13,7 +13,8 @@ const sendEmail = async (
       from: 'Test <' + config.mail.user + '>',
       to: options.email,
       subject: options.subject,
-      text: options.message
+      text: options.message,
+      html: options.html
     }
     console.log(mailOptions)
     const info = await transporter.sendMail(mailOptions)

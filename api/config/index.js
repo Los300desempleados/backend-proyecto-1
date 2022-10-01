@@ -3,6 +3,9 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const config = {
+  app: {
+    url: process.env.APP_URL
+  },
   server: {
     port: 3000
   },

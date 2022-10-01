@@ -3,6 +3,7 @@ import jwt from 'jwt-simple'
 import bcrypt from 'bcrypt'
 import config from '../config/index.js'
 import sendEmail from '../helpers/sendEmail.js'
+import template from '../helpers/emailTemplate.js'
 
 const register = async (req, res) => {
   try {
@@ -19,11 +20,18 @@ const register = async (req, res) => {
     user.password = undefined
 
     // send email to verify
+    // the email has a link with a token on query params
+    // the token is the user id
+    const payload = {
+      id: user.id
+    }
+    const token = jwt.encode(payload, config.tokens.secret)
+    const url = `${config.app.url}/verifyEmail?token=${token}`
+    const html = template({ link: url, message: 'Please, activate your account to get access to our platform', name: user.name })
     await sendEmail({
       email: user.email,
       subject: 'Verify your email',
-      message: 'Please verify your email',
-      html: `<a href="http://localhost:3000/verify/${user.id}">Verify your email</a>`
+      html
     })
 
     return res.json({
@@ -94,5 +102,24 @@ const softDelete = async (req, res) => {
     })
   }
 }
+const verifyEmail = async (req, res) => {
+  try {
+    const { token } = req.query
+    // decode token
+    const { id } = jwt.decode(token, config.tokens.secret)
+    // find and update user
+    const user = await User.findByIdAndUpdate(id, {
+      isActivated: true
+    })
+    return res.status(200).json({
+      msg: `The user ${user.name} has been activated`
+    })
+  } catch (error) {
+    res.status(500).json({
+      msg: 'Error verifying email',
+      error
+    })
+  }
+}
 
-export { register, login, softDelete }
+export { register, login, softDelete, verifyEmail }
