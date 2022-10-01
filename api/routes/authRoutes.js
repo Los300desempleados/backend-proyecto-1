@@ -6,5 +6,5 @@ const router = express.Router()
 router.post('/register', authController.register)
 router.post('/login', authController.login)
 router.put('/softDelete/:id', authController.softDelete)
-
+router.get('/verifyEmail', authController.verifyEmail)
 export default router
