@@ -28,5 +28,19 @@ const createComment = async (req, res) => {
     })
   }
 }
+const deleteById = async (req, res) => {
+  const { id } = req.params
+  try {
+    await Comment.findByIdAndRemove(id)
+    return res.json({
+      msg: 'delete comment'
+    })
+  } catch (error) {
+    res.status(500).json({
+      msg: 'error deleting comment',
+      error
+    })
+  }
+}
 
-export { createComment }
+export { createComment, deleteById }
