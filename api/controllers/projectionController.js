@@ -30,21 +30,21 @@ const create = async (req, res) => {
 //   }
 // }
 
-// const getById = async (req, res) => {
-//   const { id } = req.params
-//   try {
-//     const projection = await Projection.findById(id)
-//     return res.json({
-//       msg: 'Proyeccion id encontrados',
-//       projection
-//     })
-//   } catch (error) {
-//     res.status(500).json({
-//       msg: 'Error al consultar id de proyeccion',
-//       error
-//     })
-//   }
-// }
+const getById = async (req, res) => {
+  const { id } = req.params
+  try {
+    const projection = await Projection.findById(id).populate('comment')
+    return res.json({
+      msg: 'Proyeccion id encontrados',
+      projection
+    })
+  } catch (error) {
+    res.status(500).json({
+      msg: 'Error al consultar id de proyeccion',
+      error
+    })
+  }
+}
 
 // const updateById = async (req, res) => {
 //   const { id } = req.params
@@ -97,4 +97,4 @@ const deleteById = async (req, res) => {
   }
 }
 
-export { create, deleteById }
+export { create, deleteById, getById }

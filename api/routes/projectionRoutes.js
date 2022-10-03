@@ -5,4 +5,6 @@ const router = Router()
 
 router.post('/projection', projectionController.create)
 router.delete('/projection/:id', projectionController.deleteById)
+router.get('/projection/:id', projectionController.getById)
+
 export default router
