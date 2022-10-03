@@ -16,4 +16,19 @@ const createTheater = async (req, res) => {
   }
 }
 
-export { createTheater }
+const deleteById = async (req, res) => {
+  const { id } = req.params
+  try {
+    await Theater.findByIdAndRemove(id)
+    return res.json({
+      msg: 'removed theater'
+    })
+  } catch (error) {
+    res.status(500).json({
+      msg: 'error removing theater',
+      error
+    })
+  }
+}
+
+export { createTheater, deleteById }
